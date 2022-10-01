@@ -70,7 +70,7 @@ function (ls::BackTracking)(ϕ, αinitial::Tα, ϕ_0, dϕ_0) where Tα
     end
 
     # Backtrack until we satisfy sufficient decrease condition
-    while ϕx_1 > ϕ_0 + c_1 * α_2 * dϕ_0
+    while (ϕx_1 - ϕ_0 + c_1 * α_2 * dϕ_0) > eps(T)
         # Increment the number of steps we've had to perform
         iteration += 1
 
